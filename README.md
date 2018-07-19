@@ -34,7 +34,7 @@ Créé par Antoine Vauthey le 16/02/2018
     
     //!\\ NE PAS OUBLIER LES SCRIPT JS ET CSS BOOTSTRAP //!\\
     
-    // Affichage des données sous forme de tableau avec les données formatées en focntion de la limite et de la page
+    // Affichage des données sous forme de tableau html avec les données formatées en fonction de la limite et de la page
     echo '<table class="table"><thead><tr><td>ID</td><td>Nom</td><td>Prenom</td></tr></thead><tbody>';
     $tab = "";
     foreach($lesPersonnes as $unePersonne){
