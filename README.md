@@ -1,4 +1,3 @@
-
 # PaginationBoostrap
 
 Classe PHP Objet Permettant de créer un système de pagination de Boostrap en fonction de données venant de tableaux PHP
@@ -32,7 +31,7 @@ Créé par Antoine Vauthey le 16/02/2018
     // Obtention du code de la pagination
     $pagin = $pagination->getBootstrapPaginationCode($page);
     
-    //!\\ NE PAS OUBLIER LES SCRIPT JS ET CSS BOOTSTRAP //!\\
+    //!\\ NE PAS OUBLIER LES SCRIPTS JS ET CSS BOOTSTRAP //!\\
     
     // Affichage des données sous forme de tableau html avec les données formatées en fonction de la limite et de la page
     echo '<table class="table"><thead><tr><td>ID</td><td>Nom</td><td>Prenom</td></tr></thead><tbody>';
@@ -41,6 +40,6 @@ Créé par Antoine Vauthey le 16/02/2018
          $tab .= '<tr><td>'.$unePersonne['id'].'</td><td>'.$unePersonne['nom'].'</td><td>'.$unePersonne['prenom'].'</td></tr>';
     }
     echo $tab.'</tbody></table>';
-    // Code pagination
+    // Code html de la pagination
     echo $pagin; ?>
 ```
