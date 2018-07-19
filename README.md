@@ -26,7 +26,7 @@ Créé par Antoine Vauthey le 16/02/2018
     // Définit le nombre de page
     $pagination->setPage();
     // Tableau avec les données de la page courante
-    $lesContrats = $pagination->getArray($page);
+    $lesPersonnes = $pagination->getArray($page);
     // Obtention du code de la pagination
     $pagin = $pagination->getBootstrapPaginationCode($page);
 ```
