@@ -1,9 +1,32 @@
 # PaginationBoostrap
 
-Classe PHP Permettant de créer un système de pagination de Boostrap en fonction de données venant de tableaux PHP
+Classe PHP Objet Permettant de créer un système de pagination de Boostrap en fonction de données venant de tableaux PHP
 
 Compatible avec PHP 5 et +
 Créé par Antoine Vauthey le 16/02/2018
 
 
 ## Exemple d'usage
+```php
+    $array = array (
+      1 => array("id" => 1, "nom" => "john", "prenom" => "doe"),
+      2 => array("id" => 2, "nom" => "foo", "prenom" => "bar"),
+      3 => array("id" => 3, "nom" => "a", "prenom" => "b")
+    );
+    // Récupération de la page
+    if(isset($_GET["page"]) && $_GET["page"] != ""){
+      $page = $_GET["page"];
+    } else{
+      $page = 1;
+    }
+    //Création de la class Pagination pour l'affichage des données
+    $pagination = new Pagination($array);
+    // Définit la limite
+    $pagination->setLimit(1);
+    // Définit le nombre de page
+    $pagination->setPage();
+    // Tableau avec les données de la page courante
+    $lesContrats = $pagination->getArray($page);
+    // Obtention du code de la pagination
+    $pagin = $pagination->getBootstrapPaginationCode($page);
+```
