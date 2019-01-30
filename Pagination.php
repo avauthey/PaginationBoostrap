@@ -24,7 +24,12 @@
          * @var array 
          */
         protected $data;
-        
+        /**
+        *
+        * @var string
+        */
+        protected $lienPage;
+            
         /**
          * Données à exploitées
          * @param array $array
@@ -43,6 +48,13 @@
             $this->limit = $limit;
         }
         
+        /**
+         * 
+         * @param string $string
+         */
+        function setLienPage($string){
+            $this->lienPage = $string;
+        }
         /**
          * Définit le nombre de page max
          */
@@ -88,7 +100,7 @@
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1">Précédent</a>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="index.php?action=accueil&page=1">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="'.$this->lienPage.'&page=1">1</a></li>
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#">Suivant</a>
                                     </li>
@@ -100,7 +112,7 @@
                     $i = 2;
                     $tempArray = array();
                     while ($i <= $nbPage){
-                        $tempArray[] = '<li class="page-item"><a class="page-link" href="index.php?action=accueil&page='.$i.'">'.$i.'</a></li>';
+                        $tempArray[] = '<li class="page-item"><a class="page-link" href="'.$this->lienPage.'&page='.$i.'">'.$i.'</a></li>';
                         $i++;
                     }
                     $code = '<nav aria-label="Page navigation example">
@@ -108,10 +120,10 @@
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1">Précédent</a>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="index.php?action=accueil&page=1">1</a></li>'.
+                                    <li class="page-item active"><a class="page-link" href="'.$this->lienPage.'&page=1">1</a></li>'.
                                     implode($tempArray)
                                     .'<li class="page-item">
-                                        <a class="page-link" href="index.php?action=accueil&page=2">Suivant</a>
+                                        <a class="page-link" href="'.$this->lienPage.'&page=2">Suivant</a>
                                     </li>
                                 </ul>
                             </nav>'
@@ -125,9 +137,9 @@
                     $tempArray = array();
                     while ($i <= $nbPage){
                         if($i == $page){
-                            $tempArray[] = '<li class="page-item active"><a class="page-link" href="index.php?action=accueil&page='.$i.'">'.$i.'</a></li>';
+                            $tempArray[] = '<li class="page-item active"><a class="page-link" href="'.$this->lienPage.'&page='.$i.'">'.$i.'</a></li>';
                         }else{
-                            $tempArray[] = '<li class="page-item"><a class="page-link" href="index.php?action=accueil&page='.$i.'">'.$i.'</a></li>';
+                            $tempArray[] = '<li class="page-item"><a class="page-link" href="'.$this->lienPage.'&page='.$i.'">'.$i.'</a></li>';
                         }
                         $i++;
                     }
@@ -135,9 +147,9 @@
                     $code = '<nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-end">
                                     <li class="page-item">
-                                        <a class="page-link" href="index.php?action=accueil&page='.$p.'" >Précédent</a>
+                                        <a class="page-link" href="'.$this->lienPage.'&page='.$p.'" >Précédent</a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="index.php?action=accueil&page=1">1</a></li>'.
+                                    <li class="page-item"><a class="page-link" href="'.$this->lienPage.'&page=1">1</a></li>'.
                                     implode($tempArray) 
                                     .'<li class="page-item disabled">
                                         <a class="page-link" href="#">Suivant</a>
@@ -152,9 +164,9 @@
                     $tempArray = array();
                     while ($i <= $nbPage){
                         if($i == $page){
-                            $tempArray[] = '<li class="page-item active"><a class="page-link" href="index.php?action=accueil&page='.$i.'">'.$i.'</a></li>';
+                            $tempArray[] = '<li class="page-item active"><a class="page-link" href="'.$this->lienPage.'&page='.$i.'">'.$i.'</a></li>';
                         }else{
-                            $tempArray[] = '<li class="page-item"><a class="page-link" href="index.php?action=accueil&page='.$i.'">'.$i.'</a></li>';
+                            $tempArray[] = '<li class="page-item"><a class="page-link" href="'.$this->lienPage.'&page='.$i.'">'.$i.'</a></li>';
                         }
                         $i++;
                     }
@@ -163,12 +175,12 @@
                     $code = '<nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-end">
                                     <li class="page-item">
-                                        <a class="page-link" href="index.php?action=accueil&page='.$pp .'" >Précédent</a>
+                                        <a class="page-link" href="'.$this->lienPage.'&page='.$pp .'" >Précédent</a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="index.php?action=accueil&page=1">1</a></li>'.
+                                    <li class="page-item"><a class="page-link" href="'.$this->lienPage.'&page=1">1</a></li>'.
                                     implode($tempArray) 
                                     .'<li class="page-item">
-                                        <a class="page-link" href="index.php?action=accueil&page='.$pn .'">Suivant</a>
+                                        <a class="page-link" href="'.$this->lienPage.'&page='.$pn .'">Suivant</a>
                                     </li>
                                 </ul>
                             </nav>'
