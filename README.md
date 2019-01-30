@@ -24,6 +24,8 @@ Créé par Antoine Vauthey le 16/02/2018
     $pagination = new Pagination($array);
     // Définit la limite
     $pagination->setLimit(1);
+    // Définit le lien dans la pagination
+    $pagination->setLienPage("index.php?action=accueil");
     // Définit le nombre de page
     $pagination->setPage();
     // Tableau avec les données de la page courante
